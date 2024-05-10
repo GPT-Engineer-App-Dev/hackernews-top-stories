@@ -1,0 +1,61 @@
+import React, { useState, useEffect } from "react";
+import { Container, Heading, VStack, Text, Link, Spinner } from "@chakra-ui/react";
+
+const HackerNewsClient = () => {
+  const [stories, setStories] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchTopStories = async () => {
+      try {
+        const response = await fetch("https://hacker-news.firebaseio.com/v0/topstories.json");
+        const topStoryIds = await response.json();
+        const topStories = await Promise.all(
+          topStoryIds.slice(0, 15).map(async (id) => {
+            const storyResponse = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`);
+            return await storyResponse.json();
+          }),
+        );
+        setStories(topStories);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching Hacker News stories:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchTopStories();
+  }, []);
+
+  return (
+    <Container maxW="container.md" py={10}>
+      <Heading mb={6}>Hacker News Top Stories</Heading>
+      {loading ? (
+        <VStack spacing={4}>
+          <Spinner />
+          <Text>Loading top stories...</Text>
+        </VStack>
+      ) : (
+        <VStack spacing={4}>
+          {stories.map((story, index) => (
+            <VStack key={story.id} align="start">
+              <Text fontWeight="bold">
+                {index + 1}. {story.title}
+              </Text>
+              <Text>
+                <Link href={story.url} isExternal>
+                  {story.url}
+                </Link>
+              </Text>
+              <Text>
+                Score: {story.score} | By: {story.by} | {new Date(story.time * 1000).toLocaleString()}
+              </Text>
+            </VStack>
+          ))}
+        </VStack>
+      )}
+    </Container>
+  );
+};
+
+export default HackerNewsClient;
