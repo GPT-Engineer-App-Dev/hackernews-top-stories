@@ -5,9 +5,13 @@ build = "npm run build"
 project_id = "ee125e54-0854-4328-af4e-6bc2a9e710b1"
 
 [integrations.supabase]
-slug = "removed"
+slug = "supabase"
 input_prompt = ""
-title = "Removed"
-description = "This integration has been removed."
+title = ""
+description = ""
 resources = []
 context_prompt = ""
+
+[integrations.supabase.parameters]
+project_url = "asdfasdf"
+api_key = "asdfasdf"
