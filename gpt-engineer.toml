@@ -4,7 +4,6 @@ build = "npm run build"
 [gptengineer-app]
 project_id = "ee125e54-0854-4328-af4e-6bc2a9e710b1"
 
-
 [integrations.supabase]
 slug = "supabase"
 input_prompt = ""
