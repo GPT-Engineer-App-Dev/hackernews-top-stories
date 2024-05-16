@@ -14,4 +14,4 @@ context_prompt = ""
 
 [integrations.supabase.parameters]
 project_url = "hello"
-api_key = "YAAAAA"
+api_key = "YAAAAAZZ"
