@@ -13,5 +13,5 @@ resources = []
 context_prompt = ""
 
 [integrations.supabase.parameters]
-project_url = "asdfasdf"
+project_url = "asdfasdfasdfasdfasd"
 api_key = "asdfasdf"
