@@ -1,16 +1,7 @@
 [run]
 build = "npm run build"
 
-[integrations]
 [integrations.supabase]
-slug = "removed"
-input_prompt = ""
-title = "Removed"
-description = "This integration has been removed."
-resources = []
-context_prompt = ""
-
-[integrations.removed]
 slug = "removed"
 input_prompt = ""
 title = "Removed"
