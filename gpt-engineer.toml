@@ -11,7 +11,7 @@ context_prompt = ""
 
 [integrations.supabase.parameters]
 project_url = "asdfasdf"
-api_key = "asdfasdf"
+api_key = "asdfasdfaasdf"
 
 [gptengineer-app]
 project_id = "ee125e54-0854-4328-af4e-6bc2a9e710b1"
