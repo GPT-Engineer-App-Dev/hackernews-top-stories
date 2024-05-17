@@ -2,12 +2,16 @@
 build = "npm run build"
 
 [integrations.supabase]
-slug = "removed"
+slug = "supabase"
 input_prompt = ""
-title = "Removed"
-description = "This integration has been removed."
+title = ""
+description = ""
 resources = []
 context_prompt = ""
+
+[integrations.supabase.parameters]
+project_url = "asdfasdf"
+api_key = "asdfasdf"
 
 [gptengineer-app]
 project_id = "ee125e54-0854-4328-af4e-6bc2a9e710b1"
